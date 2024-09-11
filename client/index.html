@@ -13,6 +13,17 @@
 
 <body class="bg-gray-100">
 	<div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
+		<nav class="mb-6">
+			<ul class="flex space-x-4 flex-wrap">
+				<li><a href="/" class="text-indigo-600 hover:underline">Home</a></li>
+				<li><a href="/about.html" class="text-indigo-600 hover:underline">About</a></li>
+				<li><a href="/contact.html" class="text-indigo-600 hover:underline">Contact</a></li>
+				<!-- Đây là nơi tự động thêm các trang mới -->
+				<div id="menu-container"></div>
+
+			<li><a href="pages/page-1726038584892.html" class="text-blue-600 hover:underline">FlexWrap</a></li><li><a href="pages/page-1726038604337.html" target="_blank" class="text-blue-600 hover:underline">FlexWrap</a></li></ul>
+		</nav>
+		
 		<form id="crawl-form" class="space-y-4">
 			<input id="url-input" type="text" placeholder="Enter URL"
 				class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -25,7 +36,7 @@
 
 		<p id="error-message" class="text-red-600 mt-4 hidden"></p>
 
-		<div id="result-container" class="mt-4 hidden">
+		<!-- <div id="result-container" class="mt-4 hidden">
 			<h2 class="text-xl font-bold mb-2">Crawled Data:</h2>
 			<div class="space-y-4">
 				<div>
@@ -61,7 +72,7 @@
 					<ul id="result-headings" class="list-disc list-inside mt-1 text-gray-700"></ul>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </body>
 

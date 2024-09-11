@@ -3,6 +3,8 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require('cors');
 const { extractData } = require('./extractor/extractor');
+const createPage = require('./createPage');
+const addToMenu = require('./menu');
 
 const app = express();
 const PORT = 3000;
@@ -43,8 +45,17 @@ async function handleCrawl(req, res) {
 		// Trích xuất dữ liệu từ HTML
 		const result = extractData(html);
 
+		// Tạo file HTML mới với dữ liệu crawl
+		const pageName = 'page-' + Date.now() + '.html'; // Tạo tên file duy nhất
+		// console.log('resultresult',pageName);
+		const pageNameMenu = result.h1.replace(/\s+/g, '');;
+		
+		createPage(result, pageName);
+
+		addToMenu(pageName,pageNameMenu);
+
 		// Trả về dữ liệu đã crawl
-		return res.json(result);
+		return res.json({ ...result, pageName });
 	} catch (error) {
 		return res.status(500).json({ error: error.message });
 	}
