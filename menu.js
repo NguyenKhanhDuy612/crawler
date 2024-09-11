@@ -8,7 +8,7 @@ const path = require('path');
  */
 function addToMenu(pageName, pageNameMenu) {
 	const menuPath = path.join(__dirname, 'client/index.html'); // Đường dẫn tới file trang chính
-	const menuItem = `<li><a href="pages/${pageName}" target="_blank" class="text-blue-600 hover:underline">${pageNameMenu}</a></li>`;
+	const menuItem = `<li><a href="pages/${pageName}" target="_blank" class="text-blue-600 hover:underline">${pageNameMenu || pageName}</a></li>`;
 
 	fs.readFile(menuPath, 'utf8', (err, data) => {
 		if (err) throw err;

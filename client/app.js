@@ -11,7 +11,7 @@ document
 		// resultContainer.classList.add("hidden");
 
 		try {
-			const response = await fetch(`http://localhost:3000/api/crawl?url=${encodeURIComponent(url)}`);
+			const response = await fetch(`http://localhost:9000/api/crawl?url=${encodeURIComponent(url)}`);
 			const data = await response.json();
 
 			if (!response.ok) {
